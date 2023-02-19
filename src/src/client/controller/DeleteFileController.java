@@ -21,7 +21,7 @@ public class DeleteFileController {
 			ReadKeyboardUtil readKeyboardUtil = ReadKeyboardUtil.getInstance();
 			String fileName = readKeyboardUtil.readString("Inserte el nombre del fichero a eliminar: ");
 
-			// Formamos el mensaje que envía el cliente
+			// Formamos el mensaje que envÃ­a el cliente
 			String deleteAction = "delete#" + user + "#" + fileName;
 
 			// Conectamos el flujo de escritura con el socket.

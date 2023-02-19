@@ -16,7 +16,7 @@ public class ClientLogoutController {
 	
 	public void logout() throws IOException {
 		if(user != null) {
-			// Formamos el mensaje que envía el cliente
+			// Formamos el mensaje que envÃ­a el cliente
 			String logoutAction = "logout#" + user;
 
 			// Conectamos el flujo de escritura con el socket.

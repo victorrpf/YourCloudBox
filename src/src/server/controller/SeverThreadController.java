@@ -10,6 +10,12 @@ import java.net.Socket;
 import src.common.Channel;
 import src.server.util.Dispatcher;
 
+/**
+ * Esta clase tiene la responsabilidad de atender las peticiones de los clientes de forma concurrente sin esperas.
+ * La petici贸n de cada cliente se atiende en un hilo.
+ * @author V铆ctor Ram贸n Pardilla Fern谩ndez
+ *
+ */
 public class SeverThreadController implements Runnable {
 
 	private Socket socket;
@@ -17,7 +23,7 @@ public class SeverThreadController implements Runnable {
 
 	public SeverThreadController(Socket socket) {
 
-		/* aqui almacenaremos todos los clientes que se conecten */
+		// almacena todos los clientes que se conecten
 		this.socket = socket;
 
 		this.hilo = new Thread(this);
@@ -29,8 +35,7 @@ public class SeverThreadController implements Runnable {
 		try {
 			// Establece canal de salida
 			BufferedReader ent = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			PrintWriter sal = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),
-					true);
+			PrintWriter sal = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 			
 			Dispatcher dispatcher = new Dispatcher();
 			Channel channel = new Channel(socket, ent, sal);
@@ -39,8 +44,8 @@ public class SeverThreadController implements Runnable {
 				dispatcher.dispatcher(channel);
 			}
 
-			// Cerramos la conexi髇 con el proceso cliente.
-			System.out.println("Se cierra la conexi髇 con el cliente");
+			// Cerramos la conexi贸n con el proceso cliente.
+			System.out.println("Se cierra la conexi贸n con el cliente");
 			ent.close();
 			sal.close();
 			socket.close();

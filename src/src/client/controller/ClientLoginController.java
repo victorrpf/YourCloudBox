@@ -25,7 +25,7 @@ public class ClientLoginController {
 		String pass = readKeyboardUtil.readString("Inserte la password");
 		pass = securityService.generateHashSalt(pass);
 
-		// Formamos el mensaje que envía el cliente
+		// Formamos el mensaje que envÃ­a el cliente
 		String loginAction = "login#" + user + "#" + pass;
 
 		// Conectamos el flujo de escritura con el socket.
@@ -39,7 +39,7 @@ public class ClientLoginController {
 		 */
 		String[] aux = response.split("#");
 		if (aux[1].equals("ok")) {
-			System.out.println("El usuario " + user + " se ha autenticado con éxito.");
+			System.out.println("El usuario " + user + " se ha autenticado con Ã©xito.");
 			userLogged = user;
 		} else if (aux[1].equals("fail")) {
 			System.out.println("Usuario/password incorrectos.");

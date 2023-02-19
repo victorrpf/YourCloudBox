@@ -29,7 +29,7 @@ public class ClientUploadController {
 
 			// El fichero existe en el cliente
 			if (totalSize > 1) {
-				// Formamos el mensaje que envía el cliente
+				// Formamos el mensaje que envÃ­a el cliente
 				// #upload#user#namefile#totalsize
 				String uploadAction = "upload#" + user + "#" + fileName + "#" + totalSize;
 

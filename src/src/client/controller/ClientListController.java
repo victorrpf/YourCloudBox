@@ -16,7 +16,7 @@ public class ClientListController {
 	
 	public void list() throws IOException {
 		if(user != null) {
-			// Formamos el mensaje que envía el cliente
+			// Formamos el mensaje que envÃ­a el cliente
 			String listAction = "list#" + user;
 
 			// Conectamos el flujo de escritura con el socket.
@@ -25,7 +25,7 @@ public class ClientListController {
 			System.out.println("cliente espera respuesta listado de ficheros");
 			String response = channel.getEnt().readLine();
 			
-			// #listar#filename1, filename2…
+			// #listar#filename1, filename2
 			String[] aux = response.split("#");
 			for (int i = 1; i < aux.length; i++) {
 				System.out.println(aux[i]);

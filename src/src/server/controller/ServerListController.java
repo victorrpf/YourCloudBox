@@ -20,12 +20,13 @@ public class ServerListController {
 		String[] aux = action.split("#");
 		String userStr = aux[1];
 
-		// Si el usuario est· logado
+		// Si el usuario est√° logado
 		if (loginService.isLogged(userStr)) {
-			// list#filename1, filename2Ö login#fail
+			// list#filename1, filename2 
 			response = "list#" + fileService.listFileByUser(userStr);
 
 		} else {
+			// login#fail
 			response = "login#fail";
 		}
 		channel.getSal().println(response);

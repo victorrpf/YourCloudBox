@@ -84,7 +84,7 @@ public class MainClientTCP {
 					clientLogout.logout();
 					break;
 				default:
-					System.out.println("¡Opción no disponible! Si querías salir, pulsa 8.");
+					System.out.println("OpciÃ³n no disponible! Si querÃ­as salir, pulsa 8.");
 					break;
 
 				}

@@ -29,7 +29,7 @@ public class ClientRegisterController {
 
 		if (pass.equals(confirmPass)) {
 
-			// Formamos el mensaje que envía el cliente
+			// Formamos el mensaje que envÃ­aa el cliente
 			String registerAction = "register#" + user + "#" + pass;
 
 			// Conectamos el flujo de escritura con el socket.
@@ -44,9 +44,9 @@ public class ClientRegisterController {
 			 */
 			String[] aux = response.split("#");
 			if (aux[1].equals("useralreadyexist")) {
-				System.out.println("El usuario ya existe, debe insertar un nombre que no esté registrado.");
+				System.out.println("El usuario ya existe, debe insertar un nombre que no estÃ¡ registrado.");
 			} else if (aux[1].equals("usercreated")) {
-				System.out.println("El usuario " + user + " se ha creado con éxito");
+				System.out.println("El usuario " + user + " se ha creado con Ã©xito");
 			}
 		}else {
 			System.out.println("Las password no coinciden, vuelva a registrarse.");

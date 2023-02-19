@@ -41,13 +41,13 @@ public class Dispatcher {
 	}
 
 	public void dispatcher(Channel channel) throws Exception {
-		System.out.println("Servidor espera petición");
+		System.out.println("Servidor espera peticiÃ³n");
 		String request = channel.getEnt().readLine();
 
-		System.out.println("\n\nPetición: " + request + "\n\n");
+		System.out.println("\n\nPeticiÃ³n: " + request + "\n\n");
 		String[] partes = request.split("#");
 
-		// Se recupera la acción
+		// Se recupera la acciÃ³n
 		String action = partes[0].toLowerCase();
 
 		if (action.equals("register")) {

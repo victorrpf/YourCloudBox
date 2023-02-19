@@ -24,17 +24,17 @@ public class Menu {
 		return opcion;
 	}
 
-	// método para validar si se ha escrito un número entero
+	// mÃ©todo para validar si se ha escrito un nÃºmero entero
 	private int pedirEntero() {
 		ReadKeyboardUtil readKeyboardUtil =ReadKeyboardUtil.getInstance();
 		boolean enteroOk = false;
 		int entero = 0;
 		while (!enteroOk) {
 			try {
-				entero = readKeyboardUtil.readInt("\nEscribe una opción (número entero): ");
+				entero = readKeyboardUtil.readInt("\nEscribe una opciÃ³n (nÃºmero entero): ");
 				enteroOk = true;
 			} catch (NumberFormatException e) {
-				System.err.println("No has escrito un número entero.");
+				System.err.println("No has escrito un nÃºmero entero.");
 			}
 		}
 
