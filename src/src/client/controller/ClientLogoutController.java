@@ -5,7 +5,7 @@ import java.io.IOException;
 import src.common.Channel;
 
 /**
- * 
+ * Petición del cliente de desloguearse archivos
  * @author Víctor Ramón Pardilla Fernández
  *
  */

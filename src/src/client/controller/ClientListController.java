@@ -5,7 +5,7 @@ import java.io.IOException;
 import src.common.Channel;
 
 /**
- * 
+ * Petición del cliente de listar archivos
  * @author Víctor Ramón Pardilla Fernández
  *
  */

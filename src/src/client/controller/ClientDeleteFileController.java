@@ -6,7 +6,7 @@ import src.common.Channel;
 import src.common.ReadKeyboardUtil;
 
 /**
- * Elimina los archivos del servidor
+ * Petición del cliente de eliminar archivos
  * @author Víctor Ramón Pardilla Fernández
  *
  */

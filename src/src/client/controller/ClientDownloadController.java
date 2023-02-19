@@ -8,7 +8,7 @@ import src.common.ReadKeyboardUtil;
 import src.server.service.FileService;
 
 /**
- * 
+ * Petición del cliente de descargar archivos
  * @author Víctor Ramón Pardilla Fernández
  *
  */

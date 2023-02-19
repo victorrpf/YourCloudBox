@@ -8,7 +8,7 @@ import src.common.ReadKeyboardUtil;
 import src.common.security.SecurityService;
 
 /**
- * 
+ * Petición del cliente de loguearse archivos
  * @author Víctor Ramón Pardilla Fernández
  *
  */
