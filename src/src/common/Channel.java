@@ -4,7 +4,21 @@ import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+/**
+ * Encapsula los elementos usados en la comunicación entre el cliente y el servidor. 
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class Channel {
+	private Socket socket;
+	private BufferedReader ent;
+	private PrintWriter sal;
+
+	public Channel(Socket socket, BufferedReader ent, PrintWriter sal) {
+		this.socket = socket;
+		this.ent = ent;
+		this.sal = sal;
+	}
 
 	public Socket getSocket() {
 		return socket;
@@ -27,16 +41,6 @@ public class Channel {
 	}
 
 	public void setSal(PrintWriter sal) {
-		this.sal = sal;
-	}
-
-	private Socket socket;
-	private BufferedReader ent;
-	private PrintWriter sal;
-
-	public Channel(Socket socket, BufferedReader ent, PrintWriter sal) {
-		this.socket = socket;
-		this.ent = ent;
 		this.sal = sal;
 	}
 

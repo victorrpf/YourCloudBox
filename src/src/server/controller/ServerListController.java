@@ -4,6 +4,11 @@ import src.common.Channel;
 import src.server.service.FileService;
 import src.server.service.LoginService;
 
+/**
+ * Lista los archivos del usario logueado
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class ServerListController {
 
 	private FileService fileService;

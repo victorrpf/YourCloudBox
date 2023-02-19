@@ -8,6 +8,11 @@ import src.server.model.User;
 import src.server.service.LoginService;
 import src.server.service.UserFileService;
 
+/**
+ * Para loguear usuarios
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class ServerLoginController {
 
 	private UserFileService userFileService;

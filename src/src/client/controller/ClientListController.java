@@ -4,6 +4,11 @@ import java.io.IOException;
 
 import src.common.Channel;
 
+/**
+ * 
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class ClientListController {
 
 	private Channel channel;

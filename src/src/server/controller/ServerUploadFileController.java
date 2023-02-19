@@ -7,6 +7,11 @@ import src.common.Constant;
 import src.server.service.FileService;
 import src.server.service.LoginService;
 
+/**
+ * Sube los archivos al servidor
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class ServerUploadFileController {
 
 	private FileService fileService;
@@ -15,6 +20,12 @@ public class ServerUploadFileController {
 		this.fileService = fileService;
 	}
 
+	/**
+	 * 
+	 * @param channel
+	 * @param action
+	 * @throws Exception
+	 */
 	public void upload(Channel channel, String action) throws Exception {
 		String response = "";
 		LoginService loginService = LoginService.getinstance();

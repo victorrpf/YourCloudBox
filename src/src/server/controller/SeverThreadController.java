@@ -11,7 +11,7 @@ import src.common.Channel;
 import src.server.util.Dispatcher;
 
 /**
- * Esta clase tiene la responsabilidad de atender las peticiones de los clientes de forma concurrente sin esperas.
+ * Responsable de atender las peticiones de los clientes de forma concurrente sin esperas.
  * La petición de cada cliente se atiende en un hilo.
  * @author Víctor Ramón Pardilla Fernández
  *

@@ -4,6 +4,11 @@ import src.common.Channel;
 import src.server.service.FileService;
 import src.server.service.LoginService;
 
+/**
+ * Elimina los archivos del servidor
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class ServerDeleteFileController {
 
 	private FileService fileService;

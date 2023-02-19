@@ -5,12 +5,17 @@ import java.io.IOException;
 import src.common.Channel;
 import src.common.ReadKeyboardUtil;
 
-public class DeleteFileController {
+/**
+ * Elimina los archivos del servidor
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
+public class ClientDeleteFileController {
 
 	private Channel channel;
 	private String user;
 
-	public DeleteFileController(Channel channel, String user) {
+	public ClientDeleteFileController(Channel channel, String user) {
 		this.channel = channel;
 		this.user = user;
 	}

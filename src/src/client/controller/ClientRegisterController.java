@@ -7,6 +7,11 @@ import src.common.Channel;
 import src.common.ReadKeyboardUtil;
 import src.common.security.SecurityService;
 
+/**
+ * 
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class ClientRegisterController {
 
 	private SecurityService securityService;

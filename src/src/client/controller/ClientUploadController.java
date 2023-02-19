@@ -7,6 +7,11 @@ import src.common.Channel;
 import src.common.ReadKeyboardUtil;
 import src.server.service.FileService;
 
+/**
+ * 
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class ClientUploadController {
 
 	private Channel channel;

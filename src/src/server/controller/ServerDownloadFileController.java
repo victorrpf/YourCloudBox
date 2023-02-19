@@ -7,6 +7,11 @@ import src.common.Constant;
 import src.server.service.FileService;
 import src.server.service.LoginService;
 
+/**
+ * Descarga los archivos del servidor
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class ServerDownloadFileController {
 
 	private FileService fileService;

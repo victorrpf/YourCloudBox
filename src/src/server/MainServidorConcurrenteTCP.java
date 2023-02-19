@@ -7,7 +7,7 @@ import java.net.Socket;
 import src.server.controller.SeverThreadController;
 
 /**
- * Servidor Concurrente - Run As Java Application
+ * Servidor concurrente - Run As Java Application
  * @author Víctor Ramón Pardilla Fernández
  *
  */

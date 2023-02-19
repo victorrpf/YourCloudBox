@@ -7,6 +7,11 @@ import src.common.security.SecurityService;
 import src.server.model.User;
 import src.server.service.UserFileService;
 
+/**
+ * Registra los nuevos usuarios
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class ServerRegisterController {
 	
 	private UserFileService userFileService;

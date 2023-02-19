@@ -2,6 +2,11 @@ package src.client.util;
 
 import src.common.ReadKeyboardUtil;
 
+/**
+ * Menú de opciones para el cliente/usuario
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class Menu {
 
 	public int mostrarMenu() {

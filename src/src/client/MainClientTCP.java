@@ -12,18 +12,23 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.security.NoSuchAlgorithmException;
 
+import src.client.controller.ClientDeleteFileController;
 import src.client.controller.ClientDownloadController;
 import src.client.controller.ClientListController;
 import src.client.controller.ClientLoginController;
 import src.client.controller.ClientLogoutController;
 import src.client.controller.ClientRegisterController;
 import src.client.controller.ClientUploadController;
-import src.client.controller.DeleteFileController;
 import src.client.util.Menu;
 import src.common.Channel;
 import src.common.security.SecurityService;
 import src.server.service.FileService;
 
+/**
+ * Cliente principal - Run As Java Application
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class MainClientTCP {
 	private static final int PUERTO_SERVIDOR = 5000;
 
@@ -76,8 +81,8 @@ public class MainClientTCP {
 					clientList.list();
 					break;
 				case 6:
-					DeleteFileController deleteFileController = new DeleteFileController(channel, user);
-					deleteFileController.delete();
+					ClientDeleteFileController clientDeleteFileController = new ClientDeleteFileController(channel, user);
+					clientDeleteFileController.delete();
 					break;
 				case 7:
 					ClientLogoutController clientLogout = new ClientLogoutController(channel, user);

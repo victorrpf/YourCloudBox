@@ -3,6 +3,11 @@ package src.common;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Lectura de teclado
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class ReadKeyboardUtil {
 
 	private Scanner scanner;
