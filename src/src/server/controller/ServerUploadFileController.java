@@ -64,8 +64,7 @@ public class ServerUploadFileController {
 
 		} else {
 			response = "login#fail";
+			channel.getSal().println(response);
 		}
-
-		channel.getSal().println(response);
 	}
 }

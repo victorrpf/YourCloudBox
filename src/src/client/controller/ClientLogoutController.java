@@ -26,6 +26,7 @@ public class ClientLogoutController {
 
 			// Conectamos el flujo de escritura con el socket.
 			channel.getSal().println(logoutAction);
+			channel.getEnt().readLine();
 		}else {
 			System.out.println("El usuario no se ha autenticado.");
 		}

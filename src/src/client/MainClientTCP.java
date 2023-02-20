@@ -81,8 +81,8 @@ public class MainClientTCP {
 					clientList.list();
 					break;
 				case 6:
-					ClientDeleteFileController clientDeleteFileController = new ClientDeleteFileController(channel, user);
-					clientDeleteFileController.delete();
+					ClientDeleteFileController deleteFileController = new ClientDeleteFileController(channel, user);
+					deleteFileController.delete();
 					break;
 				case 7:
 					ClientLogoutController clientLogout = new ClientLogoutController(channel, user);
@@ -93,7 +93,7 @@ public class MainClientTCP {
 					break;
 
 				}
-			} while (opcion != 8);
+			} while (opcion != 7);
 
 			// Cerramos todo
 			ent.close();

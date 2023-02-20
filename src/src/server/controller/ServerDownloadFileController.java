@@ -74,8 +74,8 @@ public class ServerDownloadFileController {
 
 		} else {
 			response = "login#fail";
+			channel.getSal().println(response);
 		}
 
-		channel.getSal().println(response);
 	}
 }
