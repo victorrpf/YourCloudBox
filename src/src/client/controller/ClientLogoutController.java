@@ -30,5 +30,6 @@ public class ClientLogoutController {
 		}else {
 			System.out.println("El usuario no se ha autenticado.");
 		}
+		System.out.println("Saliendo...");
 	}
 }

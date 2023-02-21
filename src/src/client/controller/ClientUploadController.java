@@ -28,6 +28,7 @@ public class ClientUploadController {
 		if (user != null) {
 			ReadKeyboardUtil readKeyboardUtil = ReadKeyboardUtil.getInstance();
 			String path = readKeyboardUtil.readString("Inserte la ruta del fichero a subir");
+			path = path.replace("\\", "/"); // reemplaza las barras \ por /
 			String[] aux = path.split("/");
 			String fileName = aux[aux.length - 1];
 			long totalSize = fileService.existFile(path);
@@ -62,7 +63,8 @@ public class ClientUploadController {
 
 					int i;
 					int bytesSend = 0;
-					for (i = 0; g < arrayByteFile.length; i++) {
+					// sube el fichero según el tamaño del buffer
+					for (i = 0; g < arrayByteFile.length && i < buffer.length; i++) {
 						buffer[i] = arrayByteFile[g];
 						bytesSend++;
 						g++;

@@ -38,7 +38,7 @@ public class UserFileService {
 	}
 	
 	/**
-	 * Busca un usuario en el fichero
+	 * Busca un usuario en el fichero de usuarios registrados
 	 * @return
 	 * @throws Exception
 	 */

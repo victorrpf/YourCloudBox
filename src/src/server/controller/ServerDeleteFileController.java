@@ -31,7 +31,7 @@ public class ServerDeleteFileController {
 
 			boolean isDelete = fileService.deleteFile(userStr, fileName);
 			if (isDelete) {
-				response = "delete#El fichero" + fileName + " se ha eliminado con éxito";
+				response = "delete#El fichero " + fileName + " se ha eliminado con éxito";
 			} else {
 				response = "delete#No existe el fichero " + fileName+", no se ha podido eliminar";
 			}

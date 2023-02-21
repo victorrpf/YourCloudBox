@@ -55,7 +55,7 @@ public class ServerDownloadFileController {
 
 				int i;
 				int bytesSend = 0;
-				for (i = 0; g < arrayByteFile.length; i++) {
+				for (i = 0; g < arrayByteFile.length && i < buffer.length; i++) {
 					buffer[i] = arrayByteFile[g];
 					bytesSend++;
 					g++;
@@ -76,6 +76,5 @@ public class ServerDownloadFileController {
 			response = "login#fail";
 			channel.getSal().println(response);
 		}
-
 	}
 }

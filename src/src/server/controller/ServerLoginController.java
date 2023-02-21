@@ -33,6 +33,7 @@ public class ServerLoginController {
 
 		String response = "";
 		boolean exist = false;
+		// recorre cada usuario del listado para comprobar si coinciden usuario y contraseña
 		for (User user : listUser) {
 			if (user.getName().equals(userStr) && user.getPass().equals(pass)) {
 				exist = true;
@@ -50,7 +51,7 @@ public class ServerLoginController {
 			LoginService loginService = LoginService.getinstance();
 			loginService.login(userStr);
 
-			//Creamos el espacio del usuario
+			//creamos el espacio (directorio con el nombre del usuario) en el servidor (directorio "C:\server")
 			userFileService.createSpaceUser(userStr);
 		} else {
 			response = "login#fail";

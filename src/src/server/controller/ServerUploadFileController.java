@@ -20,8 +20,7 @@ public class ServerUploadFileController {
 		this.fileService = fileService;
 	}
 
-	/**
-	 * 
+	/** 
 	 * @param channel
 	 * @param action
 	 * @throws Exception
@@ -33,7 +32,8 @@ public class ServerUploadFileController {
 		// action #upload#user#fileName#totalSize
 		String[] aux = action.split("#");
 		String userStr = aux[1];
-
+		
+		// comprueba si está logueado
 		if (loginService.isLogged(userStr)) {
 			String fileName = aux[2];
 			long totalBytes = Long.parseLong(aux[3]);
@@ -49,7 +49,8 @@ public class ServerUploadFileController {
 				// upload-content#numberBytes#bytes
 				aux = response.split("#");
 				String fileBase64 = aux[2];
-
+				
+				// codifica el contenido del fichero
 				byte[] decoded = Base64.getDecoder().decode(fileBase64);
 				for (int i = 0; i < decoded.length && g < dataCopy.length; i++) {
 					dataCopy[g] = decoded[i];

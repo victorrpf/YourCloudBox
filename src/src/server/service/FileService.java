@@ -10,28 +10,37 @@ import src.common.Constant;
 
 /**
  * Servicio de gestión de ficheros
+ * 
  * @author Víctor Ramón Pardilla Fernández
  */
 public class FileService {
 	/**
 	 * Crea el fichero en el directorio del usuario
+	 * 
 	 * @param pathBase ruta de almacenamiento
 	 * @param fileName nombre fichero
-	 * @param data contenido fichero
+	 * @param data     contenido fichero
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
 	public void createFile(String pathBase, String fileName, byte[] data) throws FileNotFoundException, IOException {
 		// Generamos el fichero
-		try (FileOutputStream fos = new FileOutputStream(pathBase + "/" + fileName)) {
-			fos.write(data);
+		File dir = new File(pathBase);
+		if (dir.exists()) {
+			try (FileOutputStream fos = new FileOutputStream(pathBase + "/" + fileName)) {
+				fos.write(data);
+			}
+		} else {
+			throw new FileNotFoundException("No existe el directorio " + pathBase);
 		}
 	}
 
 	/**
 	 * Convierte el fichero en un array de bytes
+	 * 
 	 * @param filePath ruta del fichero
-	 * @return un array de bytes para el fichero indicado en la ruta que se pasa como parámetro
+	 * @return un array de bytes para el fichero indicado en la ruta que se pasa
+	 *         como parámetro
 	 * @throws IOException
 	 */
 	public byte[] readFileToBytes(String filePath) throws IOException {
@@ -39,6 +48,7 @@ public class FileService {
 		File file = new File(filePath);
 		byte[] bytes = new byte[(int) file.length()];
 
+		// funny, if can use Java 7, please uses Files.readAllBytes(path)
 		try (FileInputStream fis = new FileInputStream(file)) {
 			fis.read(bytes);
 		}
@@ -48,6 +58,7 @@ public class FileService {
 
 	/**
 	 * Mide el tamaño del fichero si existe
+	 * 
 	 * @param path ruta del fichero
 	 * @return tamaño del fichero
 	 */
@@ -63,6 +74,7 @@ public class FileService {
 
 	/**
 	 * Lista los ficheros del usuario logueado
+	 * 
 	 * @param user
 	 * @return lista ficheros
 	 */
@@ -79,19 +91,38 @@ public class FileService {
 
 	/**
 	 * Comprueba si el fichero está eliminado
+	 * 
 	 * @param user
 	 * @param fileName
 	 * @return true or false
 	 */
 	public boolean deleteFile(String user, String fileName) {
-
 		boolean isDelete = false;
-		File file = new File(Constant.PATH_SERVER + "/" + user + "/" + fileName);
-		if (file.exists()) {
-			file.delete();
-			isDelete = true;
+		File path = new File(Constant.PATH_SERVER + "/" + user + "/" + fileName);
+		if (path.exists()) {
+			if (path.isDirectory()) {
+				isDelete = deleteDirectory(path);
+			} else {
+				isDelete = path.delete();
+			}
 		}
 
 		return isDelete;
+	}
+
+	/**
+	 * Elimina el contenido del directorio y el directorio.
+	 * 
+	 * @param directoryToBeDeleted directorio a eliminar.
+	 * @return true si se ha podido eliminar el directorio.
+	 */
+	boolean deleteDirectory(File directoryToBeDeleted) {
+		File[] allContents = directoryToBeDeleted.listFiles();
+		if (allContents != null) {
+			for (File file : allContents) {
+				deleteDirectory(file);
+			}
+		}
+		return directoryToBeDeleted.delete();
 	}
 }

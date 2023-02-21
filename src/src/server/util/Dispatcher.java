@@ -14,6 +14,7 @@ import src.server.service.UserFileService;
 
 /**
  * Canaliza la petición del cliente al controlador correspondiente
+ * 
  * @author Víctor Ramón Pardilla Fernández
  *
  */
@@ -45,31 +46,34 @@ public class Dispatcher {
 		logout = false;
 	}
 
-
 	public void dispatcher(Channel channel) throws Exception {
 		System.out.println("Servidor espera petición");
 		String request = channel.getEnt().readLine();
 
 		System.out.println("\n\nPetición: " + request + "\n\n");
-		String[] partes = request.split("#");
+		if (request != null) {
+			String[] partes = request.split("#");
 
-		// Se recupera la acción
-		String action = partes[0].toLowerCase();
+			// Se recupera la acción
+			String action = partes[0].toLowerCase();
 
-		if (action.equals("register")) { // registro
-			serverRegisterController.register(channel, request);
-		} else if (action.equals("login")) { // inicio de sesión
-			serverLoginController.login(channel, request);
-		} else if (action.equals("list")) { // listar
-			serverListController.list(channel, request);
-		} else if (action.equals("delete")) { // eliminar
-			serverDeleteFileController.delete(channel, request);
-		} else if (action.equals("upload")) { // subir
-			serverUploadFileController.upload(channel, request);
-		} else if (action.equals("download")) { // descargar
-			serverDownloadFileController.download(channel, request);
-		} else if (action.equals("logout")) { // cerrar sesión
-			logout = serverLogoutController.logout(channel, request);
+			if (action.equals("register")) { // registro
+				serverRegisterController.register(channel, request);
+			} else if (action.equals("login")) { // inicio de sesión
+				serverLoginController.login(channel, request);
+			} else if (action.equals("list")) { // listar
+				serverListController.list(channel, request);
+			} else if (action.equals("delete")) { // eliminar
+				serverDeleteFileController.delete(channel, request);
+			} else if (action.equals("upload")) { // subir
+				serverUploadFileController.upload(channel, request);
+			} else if (action.equals("download")) { // descargar
+				serverDownloadFileController.download(channel, request);
+			} else if (action.equals("logout")) { // cerrar sesión
+				logout = serverLogoutController.logout(channel, request);
+			}
+		}else {
+			logout = true;
 		}
 	}
 

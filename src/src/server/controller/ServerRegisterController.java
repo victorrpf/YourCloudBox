@@ -32,6 +32,7 @@ public class ServerRegisterController {
 		
 		String response = "";
 		boolean exist = false;
+		// recorre cada usuario del listado para comprobar si existía
 		for(User user: listUser) {
 			if(user.getName().equals(userStr)) {
 				response = "register#useralreadyexist";
@@ -41,7 +42,7 @@ public class ServerRegisterController {
 		}
 		
 		if(!exist) {
-			// Registrar al usuario
+			// registrar al usuario
 			User newUser = new User(userStr, pass);
 			listUser.add(newUser);
 			userFileService.storeUser(listUser);

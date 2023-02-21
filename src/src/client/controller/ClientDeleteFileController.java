@@ -24,15 +24,16 @@ public class ClientDeleteFileController {
 		if (user != null) {
 
 			ReadKeyboardUtil readKeyboardUtil = ReadKeyboardUtil.getInstance();
-			String fileName = readKeyboardUtil.readString("Inserte el nombre del fichero a eliminar: ");
-
+			String path = readKeyboardUtil.readString("Inserte la ruta del fichero a eliminar: ");
+			path = path.replace("\\", "/"); // reemplaza las barras \ por /
+			
 			// Formamos el mensaje que envía el cliente
-			String deleteAction = "delete#" + user + "#" + fileName;
+			String deleteAction = "delete#" + user + "#" + path;
 
 			// Conectamos el flujo de escritura con el socket.
 			channel.getSal().println(deleteAction);
 
-			System.out.println("cliente espera respuesta al eliminar el fichero "+fileName);
+			System.out.println("cliente espera respuesta al eliminar el fichero "+path);
 			String response = channel.getEnt().readLine();
 
 			// #delete#mensaje

@@ -28,7 +28,10 @@ public class ClientDownloadController {
 		if (user != null) {
 			ReadKeyboardUtil readKeyboardUtil = ReadKeyboardUtil.getInstance();
 			String pathServer = readKeyboardUtil.readString("Inserte la ruta del fichero a descargar");
+			pathServer = pathServer.replace("\\", "/"); // reemplaza las barras \ por /
+			
 			String pathClient = readKeyboardUtil.readString("Inserte la ruta donde se va a descargar el fichero");
+			pathClient = pathClient.replace("\\", "/"); // reemplaza las barras \ por /
 			String downloadAction = "download#" + user + "#" + pathServer;
 
 			channel.getSal().println(downloadAction);
