@@ -57,6 +57,7 @@ public class ClientDownloadController {
 					dataCopy[g] = decoded[i];
 					g++;
 				}
+				// lleva el control de los bytes enviados restando
 				totalBytes -= decoded.length;
 			}
 
