@@ -45,7 +45,7 @@ public class ClientUploadController {
 				String response = channel.getEnt().readLine();
 				System.out.println(response);
 
-				// Convertir el fichero a un array de byte
+				// Convertir el fichero a un array de bytes
 				byte[] arrayByteFile = fileService.readFileToBytes(path);
 				int pendientes = arrayByteFile.length;
 				boolean hayb = true;
@@ -69,9 +69,11 @@ public class ClientUploadController {
 						bytesSend++;
 						g++;
 					}
+					// lleva el control de los bytes subidos restando
 					pendientes -= bytesSend;
 
 					// #upload-content#numberBytes#bytes
+					// codifica el contenido del fichero
 					String encoded = "upload-content#" + bytesSend + "#" + Base64.getEncoder().encodeToString(buffer);
 
 					// Enviamos un trozo del fichero

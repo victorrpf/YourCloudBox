@@ -41,10 +41,7 @@ public class ServerLoginController {
 			}
 		}
 
-		/*
-		 * login#ok login#fail
-		 */
-
+		// login#ok login#fail
 		if (exist) {
 			response = "login#ok";
 			

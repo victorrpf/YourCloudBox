@@ -44,7 +44,7 @@ public class MainClientTCP {
 			SecurityService securityService = new SecurityService();
 			FileService fileService = new FileService();
 
-			// todo esto igual que siempre
+			// para coger datos del localhost
 			InetAddress direccionServidor;
 
 			// 1) Conexion con el servidor

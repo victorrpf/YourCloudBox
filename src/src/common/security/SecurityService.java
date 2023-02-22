@@ -5,6 +5,14 @@ import java.security.NoSuchAlgorithmException;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
+/**
+ * Encripta las contraseñas de los usuarios.
+ * MD5 viene del inglés "Message Digest Algorithm 5". 
+ * Es un algoritmo de codificación de 128 bits que se compone de 32 caracteres hexadecimales.
+ * Sirve para encritpar archivos y contraseñas en bases de datos. 
+ * @author Víctor Ramón Pardilla Fernández
+ *
+ */
 public class SecurityService {
 	private static final String MD5 = "MD5";
 	private static final byte[] SALT = createSalt();

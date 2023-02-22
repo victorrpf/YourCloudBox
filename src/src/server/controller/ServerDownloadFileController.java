@@ -63,6 +63,7 @@ public class ServerDownloadFileController {
 				pendientes -= bytesSend;
 
 				// #upload-content#numberBytes#bytes
+				// codifica el contenido del fichero
 				String encoded = "upload-content#" + bytesSend + "#" + Base64.getEncoder().encodeToString(buffer);
 
 				// Enviamos un trozo del fichero

@@ -50,7 +50,8 @@ public class ClientDownloadController {
 				// upload-content#numberBytes#bytes
 				aux = response.split("#");
 				String fileBase64 = aux[2];
-
+				
+				// decodifica el contenido del fichero
 				byte[] decoded = Base64.getDecoder().decode(fileBase64);
 				for (int i = 0; i < decoded.length && g < dataCopy.length; i++) {
 					dataCopy[g] = decoded[i];

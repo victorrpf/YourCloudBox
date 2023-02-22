@@ -39,9 +39,7 @@ public class ClientLoginController {
 		System.out.println("cliente espera respuesta login");
 		String response = channel.getEnt().readLine();
 
-		/*
-		 * Posibles respuestas del servidor #login#ok, #login#fail
-		 */
+		// Posibles respuestas del servidor #login#ok, #login#fail
 		String[] aux = response.split("#");
 		if (aux[1].equals("ok")) {
 			System.out.println("El usuario " + user + " se ha autenticado con éxito.");

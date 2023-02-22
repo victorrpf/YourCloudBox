@@ -43,19 +43,20 @@ public class ServerUploadFileController {
 			// upload#namefile
 			channel.getSal().println("upload#" + fileName);
 
-			// Reconstruir el fichero
+			// reconstruir el fichero
 			while (totalBytes > 0) {
 				response = channel.getEnt().readLine();
 				// upload-content#numberBytes#bytes
 				aux = response.split("#");
 				String fileBase64 = aux[2];
 				
-				// codifica el contenido del fichero
+				// decodifica el contenido del fichero
 				byte[] decoded = Base64.getDecoder().decode(fileBase64);
 				for (int i = 0; i < decoded.length && g < dataCopy.length; i++) {
 					dataCopy[g] = decoded[i];
 					g++;
 				}
+				// lleva el control de los bytes enviados restando
 				totalBytes -= decoded.length;
 			}
 

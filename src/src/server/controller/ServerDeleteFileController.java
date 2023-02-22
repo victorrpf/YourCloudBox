@@ -27,8 +27,7 @@ public class ServerDeleteFileController {
 		String fileName = aux[2];
 
 		if (loginService.isLogged(userStr)) {
-			// delete#message,
-
+			// delete#message
 			boolean isDelete = fileService.deleteFile(userStr, fileName);
 			if (isDelete) {
 				response = "delete#El fichero " + fileName + " se ha eliminado con éxito";

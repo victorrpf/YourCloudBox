@@ -49,7 +49,7 @@ public class ServerRegisterController {
 			response = "#register#usercreated";
 		}
 		/*
-		 * response
+		 * response puede registrar dos valores en función de si el usuario existía o no
 		 * #register#useralreadyexist
 		 * #register#usercreated
 		 */

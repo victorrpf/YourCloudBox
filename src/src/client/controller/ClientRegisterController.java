@@ -34,7 +34,7 @@ public class ClientRegisterController {
 
 		if (pass.equals(confirmPass)) {
 
-			// Formamos el mensaje que envíaa el cliente
+			// Formamos el mensaje que envía el cliente
 			String registerAction = "register#" + user + "#" + pass;
 
 			// Conectamos el flujo de escritura con el socket.
