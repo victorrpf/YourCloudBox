@@ -9,14 +9,12 @@ import java.io.IOException;
 import src.common.Constant;
 
 /**
- * Servicio de gestión de ficheros
- * 
+ * Servicio de gestión de ficheros 
  * @author Víctor Ramón Pardilla Fernández
  */
 public class FileService {
 	/**
-	 * Crea el fichero en el directorio del usuario
-	 * 
+	 * Crea el fichero en el directorio del usuario 
 	 * @param pathBase ruta de almacenamiento
 	 * @param fileName nombre fichero
 	 * @param data     contenido fichero
@@ -36,11 +34,9 @@ public class FileService {
 	}
 
 	/**
-	 * Convierte el fichero en un array de bytes
-	 * 
+	 * Convierte el fichero en un array de bytes 
 	 * @param filePath ruta del fichero
-	 * @return un array de bytes para el fichero indicado en la ruta que se pasa
-	 *         como parámetro
+	 * @return un array de bytes para el fichero indicado en la ruta que se pasa como parámetro
 	 * @throws IOException
 	 */
 	public byte[] readFileToBytes(String filePath) throws IOException {
@@ -57,8 +53,7 @@ public class FileService {
 	}
 
 	/**
-	 * Mide el tamaño del fichero si existe
-	 * 
+	 * Mide el tamaño del fichero si existe 
 	 * @param path ruta del fichero
 	 * @return tamaño del fichero
 	 */
@@ -73,8 +68,7 @@ public class FileService {
 	}
 
 	/**
-	 * Lista los ficheros del usuario logueado
-	 * 
+	 * Lista los ficheros del usuario logueado 
 	 * @param user
 	 * @return lista ficheros
 	 */
@@ -90,8 +84,7 @@ public class FileService {
 	}
 
 	/**
-	 * Comprueba si el fichero está eliminado
-	 * 
+	 * Comprueba si el fichero está eliminado 
 	 * @param user
 	 * @param fileName
 	 * @return true or false
@@ -111,8 +104,7 @@ public class FileService {
 	}
 
 	/**
-	 * Elimina el contenido del directorio y el directorio.
-	 * 
+	 * Elimina el contenido del directorio y el directorio. 
 	 * @param directoryToBeDeleted directorio a eliminar.
 	 * @return true si se ha podido eliminar el directorio.
 	 */
